@@ -1,13 +1,16 @@
 import pygame
-import sounddevice as sd
-#fs=48000
-duration = 10.5  # seconds
-#myrecording = sd.rec(int(duration * fs), samplerate=fs, channels=2)
-file = 'file.wav'
-pygame.init()
+# Initialize the mixer
 pygame.mixer.init()
-pygame.mixer.music.load(file)
-while 1:
-    pygame.mixer.music.play()
-    while pygame.mixer.music.get_busy():
-        pygame.time.Clock().tick(10)
+# Load two sounds
+
+# Play the sounds; these will play simultaneously
+
+def s1():
+    snd1 = pygame.mixer.Sound('file1.wav')
+    snd1.play(-1)
+def s2():
+    snd2 = pygame.mixer.Sound('file2.wav')
+    snd2.play(-1)
+def s3():
+    snd3 = pygame.mixer.Sound('file3.wav')
+    snd3.play(-1)
